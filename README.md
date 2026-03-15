@@ -199,5 +199,9 @@ Services and providers are injected into the Flask app via `app.extensions["serv
 3. Run tests locally and add tests for new features
 4. Open a PR with a clear description and small, focused changes
 
+## License
+
+This project is licensed under the MIT License.
+See the LICENSE file for details.
 
 # By **Khalid iqnaibi** (*Immortal*)
