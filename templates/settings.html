@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Settings</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/x-icon" href="/static/images/w3.jpg">
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link href="/static/css/settings.css" rel="stylesheet">
+</head>
+
+<body class="min-h-screen flex items-center justify-center">
+
+  <!-- Menu -->
+  <div id="menuBar" class="fixed top-4 left-4 z-50">
+    <div class="hamburger-menu p-2">
+      <label class="menu__btn cursor-pointer inline-flex items-center justify-center p-2 rounded-lg">
+        <span></span>
+      </label>
+
+      <ul class="menu__box absolute mt-3 left-0 w-64 bg-[var(--bg-main)]/95 backdrop-blur-md rounded-2xl shadow-2xl p-4 space-y-2 border border-[var(--secondary)]">
+
+        <li>
+          <a class="menu__item flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--accent)]/35 transition"
+             href="/acc" title="Account">
+            <img class="icoo w-6 h-6" src="/static/images/acc.png" alt="Account">
+            <h6 class="text-sm font-medium">Account</h6>
+          </a>
+        </li>
+
+        <li>
+          <a class="menu__item flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--accent)]/35 transition"
+             href="/home_page" title="Add Client">
+            <img class="icoo w-6 h-6" src="/static/images/hoo0.png" alt="Add">
+            <h6 class="text-sm font-medium">Home</h6>
+          </a>
+        </li>
+
+
+
+        <li class="border-t border-[var(--secondary)] my-1"></li>
+
+        <li>
+          <a class="menu__item flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--accent)]/35 transition"
+             href="/settings" title="Settings">
+            <img class="icoo w-6 h-6" src="/static/images/sett.png" alt="Settings">
+            <h6 class="text-sm font-medium">Settings</h6>
+          </a>
+        </li>
+
+        <li>
+          <a class="menu__item flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--accent)]/35 transition"
+             href="/support" title="Support">
+            <img class="icoo w-6 h-6" src="/static/images/supp.png" alt="Support">
+            <h6 class="text-sm font-medium">Support</h6>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- Settings Card -->
+  <div class="flex items-center justify-center min-h-screen px-6 w-full">
+    <div class="max-w-2xl w-full bg-white/95 backdrop-blur-md shadow-xl rounded-3xl p-8 border border-[var(--secondary)] space-y-6">
+
+      <h1 class="text-3xl font-bold text-center text-gray-900">Settings</h1>
+
+
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="/static/js/settings.js"></script>
+</body>
+</html>

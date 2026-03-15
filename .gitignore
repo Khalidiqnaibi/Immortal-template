@@ -1,0 +1,8 @@
+gaia/__pycache__/__init__.cpython-39.pyc
+/gaia/__pycache__
+/routes/__pycache__
+/gaia/metrics/__pycache__
+*.pyc
+.env
+key2.json
+client_secret1.json

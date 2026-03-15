@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" class="antialiased">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Account</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="icon" type="image/x-icon" href="/static/images/w3.jpg" />
+  <link href="/static/css/acc.css" rel="stylesheet" />
+</head>
+
+<body class="min-h-screen text-gray-800">
+
+  <!-- Menu -->
+  <div id="menuBar" class="fixed top-4 left-4 z-50">
+    <div class="hamburger-menu p-2">
+      <label class="menu__btn cursor-pointer inline-flex items-center justify-center p-2 rounded-lg">
+        <span></span>
+      </label>
+
+      <ul class="menu__box absolute mt-3 left-0 w-64 bg-[var(--bg-main)]/95 backdrop-blur-md rounded-2xl shadow-2xl p-4 space-y-2 border border-[var(--secondary)]">
+
+        <li>
+          <a class="menu__item flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--accent)]/35 transition"
+             href="/acc" title="Account">
+            <img class="icoo w-6 h-6" src="/static/images/acc.png" alt="Account">
+            <h6 class="text-sm font-medium">Account</h6>
+          </a>
+        </li>
+
+        <li>
+          <a class="menu__item flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--accent)]/35 transition"
+             href="/home_page" title="Add Client">
+            <img class="icoo w-6 h-6" src="/static/images/hoo0.png" alt="Add">
+            <h6 class="text-sm font-medium">Home</h6>
+          </a>
+        </li>
+
+
+
+        <li class="border-t border-[var(--secondary)] my-1"></li>
+
+        <li>
+          <a class="menu__item flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--accent)]/35 transition"
+             href="/settings" title="Settings">
+            <img class="icoo w-6 h-6" src="/static/images/sett.png" alt="Settings">
+            <h6 class="text-sm font-medium">Settings</h6>
+          </a>
+        </li>
+
+        <li>
+          <a class="menu__item flex items-center gap-3 p-2 rounded-lg hover:bg-[var(--accent)]/35 transition"
+             href="/support" title="Support">
+            <img class="icoo w-6 h-6" src="/static/images/supp.png" alt="Support">
+            <h6 class="text-sm font-medium">Support</h6>
+          </a>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+
+  <!-- ===== Page content ===== -->
+  <main class="min-h-screen flex items-center justify-center p-6">
+    <div class="max-w-md w-full">
+
+      <!-- Account Card -->
+      <section class="bbg rounded-3xl shadow-xl p-6 md:p-8 border border-[var(--secondary)]">
+        <div class="flex flex-col items-center text-center gap-4">
+
+          <img id="avatar"
+               src="/static/images/w3.jpg"
+               alt="Business avatar"
+               class="w-24 h-24 rounded-2xl object-cover border-2 border-white shadow-sm"/>
+
+          <h1 id="hello"
+              class="text-2xl md:text-3xl font-extrabold text-gray-900 leading-tight">
+            Account
+          </h1>
+
+          <p id="msg" class="text-sm text-[var(--muted)]">
+            Manage your account
+          </p>
+          <!-- Actions -->
+          <div class="mt-6 flex flex-col sm:flex-row justify-center gap-3 w-full">
+            <button id="btn1"
+                    type="button"
+                    class="w-full sm:w-auto px-4 py-2 rounded-xl bg-[var(--accent)] text-gray-900 font-semibold shadow hover:scale-[1.02] transition">
+              Sign out
+            </button>
+
+            <button id="btn2"
+                    type="button"
+                    class="w-full sm:w-auto px-4 py-2 rounded-xl bg-[var(--secondary)] text-white font-medium shadow hover:opacity-95 transition">
+              Switch Workspace
+            </button>
+          </div>
+
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="toast_container"
+       class="fixed top-4 right-4 z-[9999] space-y-3"
+       aria-live="polite"></div>
+
+  <script src="/static/js/acc.js"></script>
+</body>
+</html>

@@ -1,0 +1,102 @@
+'''
+config.py
+----------------
+Configuration settings for Gradicent_api
+'''
+
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
+
+PROJECT_NAME = os.getenv("PROJECT_NAME", "app")
+
+ADMIN_SECRET = os.getenv("ADMIN_SECRET")
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+# payment providers
+PADDLE_VENDOR_ID = os.getenv("PADDLE_VENDOR_ID","")
+PADDLE_API_KEY = os.getenv("PADDLE_API_KEY","")
+PAYPAL_CLIENT_ID = os.getenv("PAYPAL_CLIENT_ID","")
+PAYPAL_SECRET = os.getenv("PAYPAL_SECRET","")
+STRIPE_API_KEY = os.getenv("STRIPE_API_KEY","")
+STRIPE_WEBHOOK_SECRET = os.getenv("STRIPE_WEBHOOK_SECRET","")
+
+# other settings
+BACKEND_URL= os.getenv("BACKEND_URL")
+FRONTEND_URL = os.getenv("FRONTEND_URL","http://localhost:3000")
+DATABASE_URL = os.getenv("DATABASE_URL","sqlite:///./test.db")
+LOG_LEVEL = os.getenv("LOG_LEVEL","DEBUG")
+DEBUG = os.getenv("DEBUG","True").lower() in ("true", "1", "t")
+PORT = int(os.getenv("PORT","5000"))
+HOST = os.getenv("HOST","localhost")
+SECRET_KEY = os.getenv("SECRET_KEY")
+SESSION_COOKIE_NAME = os.getenv("SESSION_COOKIE_NAME","TEMPsession")
+SESSION_LIFETIME_DAYS = int(os.getenv("SESSION_LIFETIME_DAYS","7"))
+USE_HTTPS = os.getenv("USE_HTTPS","False").lower() in ("true", "1", "t")
+
+# OAuth settings
+OAUTH_CLIENT_SECRETS_FILE = os.getenv("OAUTH_CLIENT_SECRETS_FILE",os.path.join(BASE_DIR, "client_secret1.json"))
+OAUTH_GOOGLE_CLIENT_ID = os.getenv("OAUTH_GOOGLE_CLIENT_ID")
+OAUTH_REDIRECT_URI = os.getenv("OAUTH_REDIRECT_URI")
+OAUTH_SCOPES = [
+    "https://www.googleapis.com/auth/userinfo.profile",
+    "https://www.googleapis.com/auth/userinfo.email",
+    "openid"
+]
+
+ACCESS_TOKEN_TTL_SECONDS = int(os.getenv("ACCESS_TOKEN_TTL_SECONDS", "3600"))
+REFRESH_TOKEN_TTL_SECONDS = int(os.getenv("REFRESH_TOKEN_TTL_SECONDS", str(60*60*24*30)))
+
+# Firebase settings
+FIREBASE_CREDENTIALS_PATH = os.getenv("FIREBASE_CREDENTIALS_PATH",os.path.join(BASE_DIR, "key2.json"))
+FIREBASE_DATABASE_URL = os.getenv("FIREBASE_DATABASE_URL")
+FIREBASE_STORAGE_BUCKET = os.getenv("FIREBASE_STORAGE_BUCKET")
+
+# route prefixes
+API_PREFIX = "/api"
+AUTH_ROUTE_PREFIX = f"{API_PREFIX}/auth"
+PAYMENT_ROUTE_PREFIX = f"{API_PREFIX}/payments"
+FRONT_ROUTE_PREFIX = f''
+
+class DefaultConfig:
+    ADMIN_SECRET = ADMIN_SECRET
+    
+    PADDLE_VENDOR_ID = PADDLE_VENDOR_ID
+    PADDLE_API_KEY = PADDLE_API_KEY
+    PAYPAL_CLIENT_ID = PAYPAL_CLIENT_ID
+    PAYPAL_SECRET = PAYPAL_SECRET
+    STRIPE_API_KEY = STRIPE_API_KEY
+    STRIPE_WEBHOOK_SECRET = STRIPE_WEBHOOK_SECRET
+
+    BACKEND_URL = BACKEND_URL
+    FRONTEND_URL = FRONTEND_URL
+    DATABASE_URL = DATABASE_URL
+    LOG_LEVEL = LOG_LEVEL
+    DEBUG = DEBUG
+    PORT = PORT
+    HOST = HOST
+    SECRET_KEY = SECRET_KEY
+    SESSION_COOKIE_NAME = SESSION_COOKIE_NAME
+    SESSION_LIFETIME_DAYS = SESSION_LIFETIME_DAYS
+    USE_HTTPS = USE_HTTPS
+
+    OAUTH_CLIENT_SECRETS_FILE = OAUTH_CLIENT_SECRETS_FILE
+    OAUTH_REDIRECT_URI = OAUTH_REDIRECT_URI
+    OAUTH_GOOGLE_CLIENT_ID = OAUTH_GOOGLE_CLIENT_ID
+    OAUTH_SCOPES = OAUTH_SCOPES
+
+    ACCESS_TOKEN_TTL_SECONDS = ACCESS_TOKEN_TTL_SECONDS
+    REFRESH_TOKEN_TTL_SECONDS = REFRESH_TOKEN_TTL_SECONDS
+
+    FIREBASE = {
+        "credentials_path": FIREBASE_CREDENTIALS_PATH,
+        "databaseURL": FIREBASE_DATABASE_URL,
+        "storageBucket": FIREBASE_STORAGE_BUCKET,
+    }
+
+    API_PREFIX = API_PREFIX
+    AUTH_ROUTE_PREFIX = AUTH_ROUTE_PREFIX
+    PAYMENT_ROUTE_PREFIX = PAYMENT_ROUTE_PREFIX
+    FRONT_ROUTE_PREFIX = FRONT_ROUTE_PREFIX
